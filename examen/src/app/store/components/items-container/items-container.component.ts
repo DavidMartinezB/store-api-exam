@@ -16,8 +16,10 @@ export class ItemsContainerComponent implements  OnChanges {
   constructor ( ) { }
 
   ngOnChanges(): void {
-    if (this.categorySelected) {
-      console.log(this.categorySelected);
+    
+    if (this.categorySelected !== undefined) {
+      this.storeData = this.storeData?.filter( (item) =>
+        item.category === this.categorySelected);
     }
   }
 
