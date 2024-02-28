@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { AfterContentChecked, Component, Input, OnChanges } from '@angular/core';
+
+import { StoreDataInterface } from '../../interfaces/store-data.interface';
 
 @Component({
   selector: 'app-items-container',
   templateUrl: './items-container.component.html',
   styleUrls: ['./items-container.component.scss']
 })
-export class ItemsContainerComponent {
+export class ItemsContainerComponent implements  OnChanges {
+
+  @Input() storeData: StoreDataInterface[] | undefined;
+
+
+  @Input() categorySelected: any;
+  constructor ( ) { }
+
+  ngOnChanges(): void {
+    if (this.categorySelected) {
+      console.log(this.categorySelected);
+    }
+  }
+
+
 
 }

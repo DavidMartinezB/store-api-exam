@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class StoreApiCallServiceService {
+export class StoreCategoryApiCallService {
 
   constructor( private HttpClient: HttpClient ) { }
 
   getStoreData(): Observable<any> {
-    return this.HttpClient.get('https://fakestoreapi.com/products');
+    return this.HttpClient.get('https://fakestoreapi.com/products/categories');
   }
 }

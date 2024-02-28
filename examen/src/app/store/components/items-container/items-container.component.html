@@ -1,1 +1,15 @@
-<p>items-container works!</p>
+<ng-container>
+  <div class="container">
+    <mat-card *ngFor="let item of storeData">
+      <mat-card-content>
+        <img [src]="item.image" alt="{{item.title}}">
+        <h3>
+          {{item.title}}
+        </h3>
+      </mat-card-content>
+      <mat-card-title>
+        <p>{{item.price}}€</p>
+      </mat-card-title>
+    </mat-card>
+  </div>
+</ng-container>

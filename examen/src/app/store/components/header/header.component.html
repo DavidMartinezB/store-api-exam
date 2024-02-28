@@ -1,1 +1,13 @@
-<p>header works!</p>
+<mat-toolbar>
+  <span>Store</span>
+
+    <mat-form-field>
+      <mat-label>Filter by category</mat-label>
+      <mat-select (valueChange)="emitCategory($event)">
+        <mat-option *ngFor="let item of storeData" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+</mat-toolbar>
