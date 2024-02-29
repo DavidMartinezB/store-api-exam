@@ -10,3 +10,4 @@ La aplicación consta de tres componentes que conforman la vista principal de la
 
 La aplicación consume dos servicios y una interfaz; los dos servicios son las dos llamadas a la api para obtener en una el total de los productos y en la otra las categorías de los dichos productos. La interfaz se encarga de tipar los datos que recibo de las llamadas.
 
+
