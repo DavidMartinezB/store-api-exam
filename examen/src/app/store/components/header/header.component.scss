@@ -1,0 +1,17 @@
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+}
+mat-select {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
