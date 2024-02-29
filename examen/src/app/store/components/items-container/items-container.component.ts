@@ -1,5 +1,5 @@
-import { AfterContentChecked, Component, Input, OnChanges } from '@angular/core';
-
+import { Component, Input, OnChanges } from '@angular/core';
+import { ActivatedRoute} from '@angular/router'
 import { StoreDataInterface } from '../../interfaces/store-data.interface';
 
 @Component({
@@ -10,15 +10,17 @@ import { StoreDataInterface } from '../../interfaces/store-data.interface';
 export class ItemsContainerComponent implements  OnChanges {
 
   @Input() storeData: StoreDataInterface[] | undefined;
+  storeDataCopy: StoreDataInterface[] | undefined;
 
 
   @Input() categorySelected: any;
-  constructor ( ) { }
+  constructor ( private route: ActivatedRoute ) { }
 
   ngOnChanges(): void {
-    
+    this.storeDataCopy = this.storeData;
+
     if (this.categorySelected !== undefined) {
-      this.storeData = this.storeData?.filter( (item) =>
+      this.storeDataCopy = this.storeDataCopy?.filter( (item) =>
         item.category === this.categorySelected);
     }
   }
