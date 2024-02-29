@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { StoreCategoryApiCallService } from '../../services/store-category-api-call.service';
 
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

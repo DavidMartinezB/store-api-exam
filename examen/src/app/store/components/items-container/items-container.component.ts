@@ -10,21 +10,30 @@ import { StoreDataInterface } from '../../interfaces/store-data.interface';
 export class ItemsContainerComponent implements  OnChanges {
 
   @Input() storeData: StoreDataInterface[] | undefined;
+
   storeDataCopy: StoreDataInterface[] | undefined;
 
-
   @Input() categorySelected: any;
-  constructor ( private route: ActivatedRoute ) { }
+
+  constructor ( private route: ActivatedRoute ) {
+    this.route.params.subscribe( params => {
+      this.categorySelected= params['category']
+      this.getFilteredData()
+    })
+  }
 
   ngOnChanges(): void {
-    this.storeDataCopy = this.storeData;
+    this.getFilteredData()
 
-    if (this.categorySelected !== undefined) {
+  }
+
+  getFilteredData() {
+    this.storeDataCopy = this.storeData;
+    if (this.categorySelected) {
       this.storeDataCopy = this.storeDataCopy?.filter( (item) =>
         item.category === this.categorySelected);
     }
   }
-
 
 
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JewelryComponent } from './jewelry/jewelry-component/jewelry-component.component';
 
 const routes: Routes = [
   {

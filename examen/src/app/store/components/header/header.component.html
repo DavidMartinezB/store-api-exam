@@ -5,7 +5,7 @@
       <mat-label>Filter by category</mat-label>
       <mat-select (valueChange)="emitCategory($event)">
         <mat-option *ngFor="let item of storeData" [value]="item">
-          {{item}}
+          <a routerLink='/store/{{item}}' >{{item}}</a>
         </mat-option>
       </mat-select>
     </mat-form-field>
